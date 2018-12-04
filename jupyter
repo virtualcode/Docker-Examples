@@ -1,0 +1,15 @@
+# From http://containertutorials.com/docker-ml/tensorflow_jupyter.html
+
+docker run -d -p 8888:8888 jupyter/tensorflow-notebook
+
+# use container id to access jupyter on network
+
+docker ps -a # shows container id
+
+# Get jupyter security token
+docker exec <containerID> jupyter notebook list
+
+# Access notebook by using the URL string in a browser
+
+
+
