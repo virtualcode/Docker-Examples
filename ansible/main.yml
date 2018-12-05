@@ -1,0 +1,18 @@
+---
+# Build and run a docker image and container
+
+- hosts: localhost
+  connection: local
+
+  tasks:
+    - name: Build Docker image
+      docker_image:
+        name: runcmd
+        path: docker
+        state:  build
+
+    - name: run container
+      docker_container:
+        image: runcmd:latest
+        name: runacmd
+        state: started
